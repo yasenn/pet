@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/briandowns/spinner"
-	"github.com/knqyf263/pet/config"
+	"github.com/yasenn/pet/config"
 	"github.com/pkg/errors"
 	"github.com/xanzy/go-gitlab"
 )

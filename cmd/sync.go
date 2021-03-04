@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/knqyf263/pet/config"
-	petSync "github.com/knqyf263/pet/sync"
+	"github.com/yasenn/pet/config"
+	petSync "github.com/yasenn/pet/sync"
 	"github.com/spf13/cobra"
 )
 

@@ -29,6 +29,7 @@ type GeneralConfig struct {
 	SelectCmd   string `toml:"selectcmd"`
 	Backend     string `toml:"backend"`
 	SortBy      string `toml:"sortby"`
+	Shell       string `toml:"shell"`
 }
 
 // GistConfig is a struct of config for Gist
@@ -96,7 +97,7 @@ func (cfg *Config) Load(file string) error {
 
 	cfg.General.Editor = os.Getenv("EDITOR")
 	if cfg.General.Editor == "" && runtime.GOOS != "windows" {
-		if isCommandAvailable("sensible-editor") {
+		if IsCommandAvailable("sensible-editor") {
 			cfg.General.Editor = "sensible-editor"
 		} else {
 			cfg.General.Editor = "vim"
@@ -142,7 +143,7 @@ func expandPath(s string) string {
 	return os.Expand(s, os.Getenv)
 }
 
-func isCommandAvailable(name string) bool {
+func IsCommandAvailable(name string) bool {
 	cmd := exec.Command("/bin/sh", "-c", "command -v "+name)
 	if err := cmd.Run(); err != nil {
 		return false

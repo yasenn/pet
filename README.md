@@ -150,6 +150,11 @@ By using `pbcopy` on OS X, you can copy snippets to clipboard.
 
 # Features
 
+## Exec snippets
+
+You can run select snippet using shell specified in settings.
+
+
 ## Edit snippets
 The snippets are managed in the TOML file, so it's easy to edit.
 
@@ -227,6 +232,7 @@ Run `pet configure`
   selectcmd = "fzf"               # selector command for edit command (fzf or peco)
   backend = "gist"                # specify backend service to sync snippets (gist or gitlab, default: gist)
   sortby  = "description"         # specify how snippets get sorted (recency (default), -recency, description, -description, command, -command, output, -output)
+  shell = "bash"                  # specify what shell to user for run command
 
 [Gist]
   file_name = "pet-snippet.toml"  # specify gist file name

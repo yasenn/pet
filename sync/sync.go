@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/knqyf263/pet/config"
-	"github.com/knqyf263/pet/snippet"
+	"github.com/yasenn/pet/config"
+	"github.com/yasenn/pet/snippet"
 	"github.com/pkg/errors"
 )
 

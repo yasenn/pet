@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/knqyf263/pet/config"
+	"github.com/yasenn/pet/config"
 	"github.com/spf13/cobra"
 )
 
@@ -32,6 +32,7 @@ func execute(cmd *cobra.Command, args []string) (err error) {
 	}
 	command := strings.Join(commands, "; ")
 	if config.Flag.Debug {
+		fmt.Printf("Shell: %s\n", config.Conf.General.Shell)
 		fmt.Printf("Command: %s\n", command)
 	}
 	if config.Flag.Command {

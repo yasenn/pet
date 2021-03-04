@@ -25,7 +25,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/knqyf263/pet/config"
+	"github.com/yasenn/pet/config"
 	"github.com/spf13/cobra"
 )
 

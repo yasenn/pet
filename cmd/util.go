@@ -10,9 +10,9 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/knqyf263/pet/config"
-	"github.com/knqyf263/pet/dialog"
-	"github.com/knqyf263/pet/snippet"
+	"pet/config"
+	"pet/dialog"
+	"pet/snippet"
 )
 
 func editFile(command, file string) error {
@@ -22,7 +22,9 @@ func editFile(command, file string) error {
 
 func run(command string, r io.Reader, w io.Writer) error {
 	var cmd *exec.Cmd
-	if runtime.GOOS == "windows" {
+	if len(config.Conf.General.Shell)>0 &&  config.IsCommandAvailable(config.Conf.General.Shell) {
+		cmd = exec.Command(config.Conf.General.Shell, "-c", command)
+  } else if runtime.GOOS == "windows" {
 		cmd = exec.Command("cmd", "/c", command)
 	} else {
 		cmd = exec.Command("sh", "-c", command)

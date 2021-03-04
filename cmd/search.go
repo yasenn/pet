@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/knqyf263/pet/config"
+	"github.com/yasenn/pet/config"
 	"github.com/spf13/cobra"
 	"golang.org/x/crypto/ssh/terminal"
 )
